@@ -1,0 +1,90 @@
+{
+	"version": 1,
+	"parameters": [
+		{
+			"id": "4Pw4aeNGeTLP0QFn",
+			"name": "cameras",
+			"description": "cameras to process (comma separated)",
+			"help_text": "any of Face, Nose, Behavior; a camera with no video in the session is skipped (default Face,Nose,Behavior)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "Face,Nose,Behavior"
+		},
+		{
+			"id": "1GgPmk66gN5dhtme",
+			"name": "face-roi",
+			"description": "Face camera motion-SVD ROI",
+			"help_text": "'auto' (default) centres a default-sized box on the session's motion; 'aligned' moves the built-in box (200,220,180,150) by this camera's rigid alignment to the reference session 786297_2025-05-20; 'default' uses the built-in box; or 'x,y,w,h' in pixels. Check qc/Face_roi_placement.png (and qc/Face_roi_alignment.png)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "auto"
+		},
+		{
+			"id": "tNbjLH8l1dYimSmb",
+			"name": "nose-roi",
+			"description": "Nose camera motion-SVD ROI",
+			"help_text": "'auto' (default) centres a default-sized box on the session's motion; 'aligned' moves the built-in box (110,110,240,210) by this camera's rigid alignment to the reference session 786297_2025-05-20; 'default' uses the built-in box; or 'x,y,w,h' in pixels. Check qc/Nose_roi_placement.png (and qc/Nose_roi_alignment.png)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "auto"
+		},
+		{
+			"id": "NgHvfuNvqh2nKJu7",
+			"name": "behavior-roi",
+			"description": "Behavior camera motion-SVD ROI",
+			"help_text": "'auto' (default) centres a default-sized box on the session's motion; 'aligned' moves the built-in box (120,185,180,90) by this camera's rigid alignment to the reference session 786297_2025-05-20; 'default' uses the built-in box; or 'x,y,w,h' in pixels. Check qc/Behavior_roi_placement.png (and qc/Behavior_roi_alignment.png)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "auto"
+		},
+		{
+			"id": "2iV7nwGmc6c7KSvg",
+			"name": "sbin",
+			"description": "spatial binning factor before the SVD",
+			"help_text": "2 halves each dimension (4\u00d7 fewer pixels, ~4\u00d7 faster) while preserving motion content; use 1 for full resolution (slower, may timeout on long sessions)",
+			"type": "text",
+			"value_type": "number",
+			"default_value": "2",
+			"minimum": 1,
+			"maximum": 8
+		},
+		{
+			"id": "hQHquuUQOcZdjebg",
+			"name": "svd-components-saved",
+			"description": "SVD components written to the outputs",
+			"help_text": "facemap always computes 500; this many go into facemap_table.h5 and the mask .npy (default 100)",
+			"type": "text",
+			"value_type": "number",
+			"default_value": "100",
+			"minimum": 1,
+			"maximum": 500
+		},
+		{
+			"id": "UChgWvY6Z2210BKC",
+			"name": "keyframe-handling",
+			"description": "how the cleaned motion trace handles compression pops",
+			"help_text": "interpolate | nan | none -- samples spanning an H.264 keyframe are always flagged; this sets what the cleaned copy does with them (default interpolate)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "interpolate"
+		},
+		{
+			"id": "7oIrb841WolHtYxn",
+			"name": "trim-leading-frames",
+			"description": "drop the acquisition preamble before processing",
+			"help_text": "auto detects the white metadata frame + exposure settling and trims losslessly to the next keyframe; 0 disables; or give an explicit frame count (default auto)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "auto"
+		},
+		{
+			"id": "FbqtgYP25iFBV3Tt",
+			"name": "save-proc-npy",
+			"description": "keep facemap's native _proc.npy output",
+			"help_text": "true | false -- the native file holds all 500 components and masks (~0.6 GB per camera) (default true)",
+			"type": "text",
+			"value_type": "string",
+			"default_value": "true"
+		}
+	]
+}

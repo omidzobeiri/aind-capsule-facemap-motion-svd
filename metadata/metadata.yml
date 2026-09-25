@@ -1,0 +1,10 @@
+metadata_version: 1
+name: aind-capsule-facemap-motion-svd
+description: Runs facemap's motion SVD over fixed per-camera ROIs on a session's Face,
+  Nose and Behavior videos. The crop is fixed per camera so sessions are comparable,
+  and every run reports where the session's motion actually fell relative to the box.
+  Removes the acquisition preamble before processing, repairs facemap's motion-energy
+  trace onto one time convention, flags H.264 keyframe pops, attaches sync timestamps,
+  and writes QC figures, metrics and AIND metadata.
+authors:
+- name: Omid Zobeiri

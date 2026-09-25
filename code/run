@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -ex
+
+# Master script for the capsule. On "Reproducible Run", this executes.
+python -u run_capsule.py "$@"

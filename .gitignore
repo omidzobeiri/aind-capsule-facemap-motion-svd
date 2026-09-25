@@ -1,0 +1,15 @@
+# CodeOcean capsule data/results (attached / generated at run time)
+/data/
+/results/
+/scratch/
+
+# python / editor cruft
+**/__pycache__/
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+.vscode/
+
+# OS
+.DS_Store
+.vscode

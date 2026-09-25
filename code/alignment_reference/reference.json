@@ -1,0 +1,50 @@
+{
+  "session": "multiplane-ophys_786297_2025-05-20_09-30-57",
+  "created": "2026-09-25",
+  "n_frames": 25,
+  "warp_convention": "W maps reference px -> session px: [x_s, y_s] = W @ [x_r, y_r, 1]",
+  "cameras": {
+    "Behavior": {
+      "template": "Behavior.png",
+      "source_video": "1437401259_Behavior_20250520T093039.mp4",
+      "frame_height": 492,
+      "frame_width": 658,
+      "top_crop": 0.0,
+      "min_ecc": 0.2,
+      "roi": {
+        "x": 120,
+        "y": 185,
+        "w": 180,
+        "h": 90
+      }
+    },
+    "Face": {
+      "template": "Face.png",
+      "source_video": "1437401259_Face_20250520T093040.mp4",
+      "frame_height": 492,
+      "frame_width": 658,
+      "top_crop": 0.3,
+      "min_ecc": 0.2,
+      "roi": {
+        "x": 200,
+        "y": 220,
+        "w": 180,
+        "h": 150
+      }
+    },
+    "Nose": {
+      "template": "Nose.png",
+      "source_video": "1437401259_Nose_20250520T093040.mp4",
+      "frame_height": 492,
+      "frame_width": 658,
+      "top_crop": 0.0,
+      "min_ecc": 0.2,
+      "roi": {
+        "x": 110,
+        "y": 110,
+        "w": 240,
+        "h": 210
+      }
+    }
+  }
+}
